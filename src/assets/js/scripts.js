@@ -10,6 +10,7 @@ $(document).ready(function() {
 	Showcase();
 	ShowcaseCarousel();
 	LargeShowcaseCarousel();
+	AjaxLoad();	
 	BackToTop();
 	JustifiedGrid();
 	Lightbox();
@@ -1616,7 +1617,8 @@ Function Showcase
 				TweenMax.to($(".socials-wrap"), 0.3, {force3D:true, opacity:0, delay:0.1, x:20, ease:Power2.easeOut});
 				$("body").addClass("load-project-page");
 				setTimeout(function(){
-					$('.swiper-slide-active').find('a.showcase-link-project').trigger('click');
+					console.log($('.swiper-slide-active').find('a').attr('href'))
+					window.location.href=$('.swiper-slide-active').find('a').attr('href');
 					$("body").addClass("show-loader");	
 				} , 500 );
 			  });
