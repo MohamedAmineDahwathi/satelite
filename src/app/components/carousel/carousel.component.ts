@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
+declare const $:any;
 @Component({
   selector: 'app-carousel',
   templateUrl: './carousel.component.html',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarouselComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
+  }
+
+  
+  goAfter(){
+    let that=this;
+     setTimeout(function(){
+      that.router.navigateByUrl($(".above").find("a").attr('href'));
+     	
+    },1000);
   }
 
 }

@@ -15,7 +15,7 @@ export class Project05Component implements OnInit {
 
   ngOnInit(): void {
     
-     this.jq.addLoader("a.next-ajax-link-project")
+     LoadViaAjax();
   }
 
 }
