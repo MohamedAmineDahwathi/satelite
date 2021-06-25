@@ -9778,6 +9778,7 @@ function FitThumbScreen() {
     for (var l = document.documentElement, c = document.body, e = document.querySelectorAll(".thumb-page"), t = document.querySelectorAll(".item-image"), o = 0; o < t.length; o++) i(t[o], e[o]);
     function i(e, t) {
         e.addEventListener("click", function () {
+            console.log("me fk off")
             TweenMax.to("#ball", 0.2, { borderWidth: "2px", scale: 1, x: -15, y: -15 }),
                 TweenMax.to("#ball-loader", 0.2, { borderWidth: "2px", top: 0, left: 0 }),
                 $("#ball").removeClass("with-icon").removeClass("hold"),
@@ -9799,6 +9800,7 @@ function FitThumbScreen() {
                 }, 600);
         }),
             t.addEventListener("click", function () {
+                console.log('whattttttttttttttttt')
                 $(".item").removeClass("above"), $(".item-image").removeClass("above"), TweenMax.to("#hero, .item-content, .item .item-caption, #page-nav, footer", 0.3, { opacity: 1, delay: 0.6, ease: Power2.easeOut }), n(t, e);
             });
     }

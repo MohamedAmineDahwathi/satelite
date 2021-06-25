@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { JqueryExService } from 'src/app/helpers/jquery-ex.service';
 
 @Component({
   selector: 'app-contact',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private jq:JqueryExService
+  ) { }
 
   ngOnInit(): void {
+    this.jq.addLoader("a.next-ajax-link-page")
   }
 
 }
