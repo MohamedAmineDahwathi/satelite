@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JqueryExService } from 'src/app/helpers/jquery-ex.service';
-
+declare const LoadViaAjax:any;
 @Component({
   selector: 'app-project01',
   templateUrl: './project01.component.html',
@@ -13,7 +13,8 @@ export class Project01Component implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    
     this.jq.addLoader("a.next-ajax-link-project")
-  }
+ }
 
 }

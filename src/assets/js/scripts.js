@@ -17,7 +17,6 @@ $(document).ready(function() {
 	ContactForm();
 	PlayVideo();
 	ContactMap();
-	
 	if (window.history && window.history.pushState) {
 		$(window).on('popstate', function() {
 		setTimeout(function(){
@@ -353,7 +352,6 @@ Function First Load
 		
 		// Project Navigation Events
 		$('.next-ajax-link-project').on('click', function() {	
-			console.logt("qsfqs")					
 			$("body").addClass("load-next-project");
 			$("body").addClass("show-loader");
 			var pageheight = $(".scroll-content").height()
@@ -380,7 +378,7 @@ Function First Load
 			TweenMax.to($("#main-page-content"), 0.3, {opacity:0});			
 			setTimeout(function(){
 				TweenMax.to($("#project-nav"), 0.6, {height:"100vh", ease:Power2.easeInOut});
-				TweenMax.to($(".next-project-image"), 0.6, {top:"0", y: 0, ease:Power2.easeInOut});
+			//	TweenMax.to($(".next-project-image"), 0.6, {top:"0", y: 0, ease:Power2.easeInOut});
 				TweenMax.to($("footer"), 0.3, {opacity:0, ease:Power2.easeInOut});
 			} , 50 );	
 		});
@@ -1571,10 +1569,7 @@ Function Showcase
 				TweenMax.to('#ball', 0.3,{borderWidth: '2px', delay:0.3, scale:1, opacity:1});
 				TweenMax.to($(".socials-wrap"), 0.3, {force3D:true, opacity:0, delay:0.1, x:20, ease:Power2.easeOut});
 				$("body").addClass("load-project-page");
-				setTimeout(function(){
-					$('.swiper-slide-active').find('a.showcase-link-project').trigger('click');
-					$("body").addClass("show-loader");	
-				} , 500 );
+				
 			  });
 			});
 			

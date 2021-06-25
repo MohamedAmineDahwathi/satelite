@@ -67,7 +67,7 @@
                     <!-- Portfolio Columns -->
                     <div id="portfolio" class="below-caption are-images-unloaded manual-load">
                         
-                        <div class="item photo" (click)="goAfter('/project01')">
+                        <div class="item photo" >
                             <div class="item-appear">                                    		
                                 <div class="item-content">                            	                                    
                                     <a class="item-wrap ajax-link-project"  routerLink="/project01"></a>
@@ -256,7 +256,7 @@
 
 
 <div class="thumb-container">
-    <div class="thumb-page" data-src="assets/images/01hero.jpg"></div>
+    <div class="thumb-page" (click)="goAfter()" data-src="assets/images/01hero.jpg"></div>
     <div class="thumb-page" data-src="assets/images/02hero.jpg"></div>
     <div class="thumb-page" data-src="assets/images/03hero.jpg"></div>
     <div class="thumb-page" data-src="assets/images/04hero.jpg"></div>
