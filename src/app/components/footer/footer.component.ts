@@ -14,11 +14,12 @@ export class FooterComponent implements OnInit {
   constructor(
     private router:Router
   ) { }
-
+  timeoutId:any=0;
   ngOnInit(): void {
     let that=this;
+     
     $('.footer-button').on('mousedown touchstart', function(event) {
-    setTimeout(function(){
+      that.timeoutId=setTimeout(function(){
       console.log($('.swiper-slide-active').find('a').attr('href'))
       that.router.navigateByUrl($('.swiper-slide-active').find('a').attr('href'))
       $("body").addClass("show-loader");	
@@ -26,7 +27,9 @@ export class FooterComponent implements OnInit {
       LoadViaAjax();
       },300);
     } , 1000 );
-  });
+  }).on('mouseup mouseleave', function() {
+    clearTimeout(that.timeoutId);
+});;
     $(".button-wrap.left").on('click', function() {
 			console.log("sound clicked")
 			this.audio = document.getElementById("audio");

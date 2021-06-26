@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { JqueryExService } from 'src/app/helpers/jquery-ex.service';
 declare const $:any;
-declare const LoadViaAjax:any;
+declare const TimelineLite:any;
+declare const Power2:any;
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -14,7 +15,8 @@ export class HeaderComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.jq.addLoader("a.ajax-link")
+    
+    
   }
 
 

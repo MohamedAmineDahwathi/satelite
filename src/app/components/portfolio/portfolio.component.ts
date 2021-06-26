@@ -15,15 +15,15 @@ export class PortfolioComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.jq.addLoader("a.next-ajax-link-page")
+    this.jq.exJs()
   }
+
   goAfter(){
     let that=this;
      setTimeout(function(){
       that.router.navigateByUrl($(".above").find("a").attr('href'));
      	
     },1000);
-    
   }
 
 

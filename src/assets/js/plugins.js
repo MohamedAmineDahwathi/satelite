@@ -9800,7 +9800,6 @@ function FitThumbScreen() {
                 }, 600);
         }),
             t.addEventListener("click", function () {
-                console.log('whattttttttttttttttt')
                 $(".item").removeClass("above"), $(".item-image").removeClass("above"), TweenMax.to("#hero, .item-content, .item .item-caption, #page-nav, footer", 0.3, { opacity: 1, delay: 0.6, ease: Power2.easeOut }), n(t, e);
             });
     }

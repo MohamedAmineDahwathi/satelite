@@ -13,7 +13,7 @@ export class ContactComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.jq.addLoader("a.next-ajax-link-page")
+    this.jq.exJs()
   }
 
 }

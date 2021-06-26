@@ -15,7 +15,8 @@ export class Project04Component implements OnInit {
 
   ngOnInit(): void {
     
-     LoadViaAjax();
+    
+    this.jq.exJs()
   }
 
 }
