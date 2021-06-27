@@ -57,7 +57,7 @@ export class JqueryExService {
       setTimeout(function(){
 				LoadViaAjax();		
         
-			},900);
+			},400);
       
         
     });

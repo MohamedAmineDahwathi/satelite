@@ -336,6 +336,7 @@ Function First Load
 			
 		// Slider Center on click
 		$('.slider').on('click', function() {
+			console.log("clickdsfsdf***************")
 			var $window = $(window),
 				$element = $(this),
 				elementTop = $element.offset().top,
@@ -1610,7 +1611,6 @@ Function Sliders
 		$(".owl-prev,.owl-next").ready(function(){
 				
 		$(".owl-prev").mouseenter(function(e) {	
-			console.log("wioooo*****************")
 			TweenMax.to('#ball', 0.1,{transformOrigin: '15px 15px', borderWidth: '1px', scale: 2});
 			TweenMax.to('#ball-loader', 0.1,{borderWidth: '1px', top: 1, left: 1});
 			$( "#ball" ).addClass("with-icon").append( '<i class="fa fa-chevron-left"></i>' );
@@ -1637,20 +1637,7 @@ Function Sliders
 		});		
 		
 	})	;
-		if( $('.text-carousel').length > 0 ){		
-			console.log("*******************wsdfsdfsdf")
-			$(".text-carousel").owlCarousel({	
-				loop:true,
-				dots:false,
-				items:1,
-				autoplay:false,
-				smartSpeed: 750,
-				autoHeight:true,
-				autoplayHoverPause:true,
-				nav:true,
-				navText: ["<div class='prev-testimonial parallax-element'><i class='fa fa-chevron-left' aria-hidden='true'></i></div>","<div class='next-testimonial parallax-element'><i class='fa fa-chevron-right' aria-hidden='true'></i></div>"],
-			});
-		}
+		
 		
 		
 	}//End Sliders	
