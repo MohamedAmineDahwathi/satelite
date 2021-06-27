@@ -115,13 +115,13 @@ Function Page Load
 									} , 600 );
 								}
 								
-							/*	// Fading In Showcase elements on Finised
+								// Fading In Showcase elements on Finised
 								TweenMax.set($("#showcase-holder"), {opacity:0, scale:1.1});			
 								TweenMax.set($(".swiper-pagination-bullet-active .subtitle"), {opacity:0, transform: 'translate3d(0,15vh,0)', delay:0});
 								TweenMax.set($(".swiper-pagination-bullet-active .title"), {opacity:0, transform: 'translate3d(0,15vh,0)', delay:0});
 								TweenMax.set($(".footer-button-wrap"), {opacity:0, transform: 'translate3d(0,15vh,0)', delay:0, ease:Power2.easeOut});
 								TweenMax.set($(".showcase-counter, .swiper-pagination-bullet-active .counter, .arrows-wrap"), {opacity:0, delay:0,});
-								*/
+								
 								TweenMax.to($("#showcase-holder"), 0.8, {force3D:true, opacity:1, scale:1, delay:0.8, ease:Power2.easeOut});
 								TweenMax.to($(".swiper-pagination-bullet-active .subtitle"), 0.4, {force3D:true, opacity:1, y:0, delay:0.9, ease:Power2.easeOut});
 								TweenMax.to($(".swiper-pagination-bullet-active .title"), 0.4, {force3D:true, opacity:1, y:0, delay:0.95, ease:Power2.easeOut});
@@ -1500,16 +1500,16 @@ Function Showcase
 				var navsubtitleheight = $(".subtitle").height()
 				
 				$('#showcase-tilt').addClass('disabled');
-				TweenMax.to($(".subtitle"), 0.3, {force3D:true, opacity:0, scale:0.5, delay:0, ease:Power2.easeOut});
+				//TweenMax.to($(".subtitle"), 0.3, {force3D:true, opacity:0, scale:0.5, delay:0, ease:Power2.easeOut});
 				TweenMax.to($(".title"), 0.6, {force3D:true, y:-navtitleheight, delay:0.1, ease:Power2.easeInOut});
-				TweenMax.set($(".subtitle"), {opacity:0, scale:1, y: 150, delay:0.4});
+				//TweenMax.set($(".subtitle"), {opacity:0, scale:1, y: 150, delay:0.4});
 				TweenMax.to($(".swiper-pagination-bullet-active .subtitle"), 0.3, {force3D:true, opacity:1, scale:1, y:navsubtitleheight, delay:0.4, ease:Power2.easeOut});
 				
 								
 				TweenMax.to($(".footer-button-wrap, .caption-border, .showcase-counter, .counter, .arrows-wrap"), 0.3, {force3D:true, opacity:0, delay:0, ease:Power2.easeOut});
-				TweenMax.to($(".button-wrap.left"), 0.3, {force3D:true, opacity:0, delay:0.1, x:-20, ease:Power2.easeOut});
+			//	TweenMax.to($(".button-wrap.left"), 0.3, {force3D:true, opacity:0, delay:0.1, x:-20, ease:Power2.easeOut});
 				TweenMax.to('#ball', 0.3,{borderWidth: '2px', delay:0.3, scale:1, opacity:1});
-				TweenMax.to($(".socials-wrap"), 0.3, {force3D:true, opacity:0, delay:0.1, x:20, ease:Power2.easeOut});
+				//TweenMax.to($(".socials-wrap"), 0.3, {force3D:true, opacity:0, delay:0.1, x:20, ease:Power2.easeOut});
 				$("body").addClass("load-project-page");
 				
 			  });
