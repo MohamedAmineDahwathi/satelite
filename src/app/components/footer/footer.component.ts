@@ -23,9 +23,7 @@ export class FooterComponent implements OnInit {
       console.log($('.swiper-slide-active').find('a').attr('href'))
       that.router.navigateByUrl($('.swiper-slide-active').find('a').attr('href'))
       $("body").addClass("show-loader");	
-      setTimeout(function(){
-      LoadViaAjax();
-      },300);
+     
     } , 1000 );
   }).on('mouseup mouseleave', function() {
     clearTimeout(that.timeoutId);
