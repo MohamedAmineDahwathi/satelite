@@ -17,20 +17,6 @@ export class Project03Component implements OnInit {
 
   ngOnInit(): void {
     this.jq.exJs()
-    $(".text-carousel").ready(function(){   
-      $(".text-carousel").owlCarousel({	
-      loop:true,
-      dots:false,
-      items:1,
-      autoplay:false,
-      smartSpeed: 750,
-      autoHeight:true,
-      autoplayHoverPause:true,
-      nav:true,
-      navText: ["<div class='prev-testimonial parallax-element'><i class='fa fa-chevron-left' aria-hidden='true'></i></div>","<div class='next-testimonial parallax-element'><i class='fa fa-chevron-right' aria-hidden='true'></i></div>"],
-    });
-    
-    })
    
   }
   goAfter(ff){

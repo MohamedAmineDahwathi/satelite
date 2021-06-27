@@ -15,8 +15,6 @@ export class Project02Component implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    
-   
     this.jq.exJs()
  }
 
