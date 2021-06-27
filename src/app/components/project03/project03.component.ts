@@ -15,7 +15,6 @@ export class Project03Component implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    Sliders();
     this.jq.exJs()
   }
 
