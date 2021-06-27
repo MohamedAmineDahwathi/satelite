@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { JqueryExService } from 'src/app/helpers/jquery-ex.service';
 
+declare const Sliders:any;
 declare const LoadViaAjax:any;
 @Component({
   selector: 'app-project03',
@@ -14,6 +15,7 @@ export class Project03Component implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    Sliders();
     this.jq.exJs()
   }
 

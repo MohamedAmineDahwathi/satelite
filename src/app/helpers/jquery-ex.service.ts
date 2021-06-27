@@ -37,8 +37,10 @@ export class JqueryExService {
     $(document).ready(function() {
 	
       "use strict";
-      
-      LoadViaAjax();
+      setTimeout(function(){
+				LoadViaAjax();		
+        
+			},900);
       
         
     });

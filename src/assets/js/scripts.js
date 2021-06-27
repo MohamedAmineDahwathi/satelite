@@ -2,18 +2,7 @@
     $(document).ready(function() {
 		"use strict";
 		PageLoad();
-		FirstLoad();
-		Portfolio();	
-		Showcase();
-		ShowcaseCarousel();
-		LargeShowcaseCarousel();
-		AjaxLoad();	
-		BackToTop();
-		JustifiedGrid();
-		Lightbox();
-		ContactForm();
-		PlayVideo();
-		ContactMap();	
+	
 	})
 
 /*--------------------------------------------------
@@ -251,9 +240,31 @@ Function First Load
 		});
 		
 		
+		//Load Default Page
+		$('a.ajax-link').on('click', function() {
+			$("body").addClass("show-loader");	
+			$(".flexnav").removeClass("flexnav-show");
+			$('#menu-burger').removeClass("open");
+			var tlMenu = new TimelineLite();
+			$(".fullscreen-menu .menu-timeline").each(function(index, element) {
+				tlMenu.to(element, 0.25, {y:-30, opacity:0, ease:Power2.easeIn}, index * 0.03)
+			});	
+			TweenMax.to('#ball', 0.3,{borderWidth:"2px",scale:1,backgroundColor:"rgba(0, 0, 0, 0)",opacity:1});
+			if( $('#showcase-holder').length > 0 ){
+				TweenMax.to($(".swiper-pagination-bullet-active .subtitle"), 0.4, {force3D:true, opacity:0, delay:0.1, ease:Power2.easeOut});
+				TweenMax.to($(".swiper-pagination-bullet-active .title"), 0.4, {force3D:true, opacity:0, delay:0.1, ease:Power2.easeOut});
+				TweenMax.to($(".footer-button-wrap"), 0.4, {force3D:true, opacity:0, delay:0.1, ease:Power2.easeOut});
+				TweenMax.to($(".showcase-counter, .swiper-pagination-bullet-active .counter, .arrows-wrap"), 0.3, {force3D:true, opacity:0, delay:0.1, ease:Power2.easeOut});
+				TweenMax.to($("#main"), 0.3, {opacity:0, delay:0.4, ease:Power0.ease});
+			} else {
+				TweenMax.to($("#main"), 0.3, {opacity:0, delay:0.1, ease:Power0.ease});
+			}		
+		
+		});
 		
 		//Load Page From Menu
 		$('nav .ajax-link').on('click', function() {
+			console.log("fffdsfsdfsdf*************")
 			var tl = new TimelineLite();
 			$(".menu-timeline").each(function(index, element) {
 				tl.to(element, 0.25, {y:-80, opacity:0, ease:Power1.easeIn }, index * 0.05)
@@ -1590,8 +1601,7 @@ Function Sliders
 		$( ".slider .owl-next" ).removeClass( "parallax-wrap" );
 		
 		if( $('.carousel').length > 0 ){
-		
-			console.log("wiowww if")
+	
 			$('.carousel').owlCarousel({
 				loop:true,
 				margin:20,
