@@ -14,10 +14,7 @@ export class Project01Component implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    setTimeout(function(){
-      LoadViaAjax();			
-
-    },400);
+   this.jq.exJs()
  }
 
  goAfter(ff){
