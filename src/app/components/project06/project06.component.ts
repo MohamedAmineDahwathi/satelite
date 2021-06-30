@@ -16,8 +16,10 @@ export class Project06Component implements OnInit {
 
   ngOnInit(): void {
     
-    
-    this.jq.exJs()
+    setTimeout(function(){
+      LoadViaAjax();			
+
+    },400);
   }
 
   
@@ -25,6 +27,6 @@ export class Project06Component implements OnInit {
     let that=this;
      setTimeout(function(){
       that.router.navigateByUrl(ff);
-      },200);
+      },800);
   }
 }

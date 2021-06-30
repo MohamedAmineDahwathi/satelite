@@ -23,12 +23,12 @@ export class CarouselComponent implements OnInit {
   }
 
   
-  goAfter(){
+  goAfter(ff=null){
     let that=this;
      setTimeout(function(){
-      that.router.navigateByUrl($(".above").find("a").attr('href'));
+      that.router.navigateByUrl(ff?ff:$(".above").find("a").attr('href'));
      	
-    },1000);
+   },500);;
   }
 
 }

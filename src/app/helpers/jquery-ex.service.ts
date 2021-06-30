@@ -34,8 +34,8 @@ export class JqueryExService {
   }
 
   exJs(){
-    $(document).ready(function() {
-	
+	 $(document).ready(function() {
+		
       "use strict";
       $("body").addClass("show-loader");	
 			$(".flexnav").removeClass("flexnav-show");
@@ -55,9 +55,9 @@ export class JqueryExService {
 				TweenMax.to($("#main"), 0.3, {opacity:0, delay:0.1, ease:Power0.ease});
 			}
       setTimeout(function(){
-				LoadViaAjax();		
-        
-			},400);
+				LoadViaAjax();			
+
+			},800);
       
         
     });
