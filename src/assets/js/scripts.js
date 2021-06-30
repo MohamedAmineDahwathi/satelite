@@ -2,7 +2,20 @@
     $(document).ready(function() {
 		"use strict";
 		PageLoad();
-		AjaxLoad();
+		var e = { x: 0, y: 0 },
+        t = { x: 0, y: 0 },
+        n = 0.25,
+        o = !1,
+        a = document.getElementById("ball"),
+        i = document.getElementById("ball-loader");
+    TweenLite.set(a, { xPercent: -50, yPercent: -50 }),
+        document.addEventListener("mousemove", function (t) {
+            var n = window.pageYOffset || document.documentElement.scrollTop;
+            (e.x = t.pageX), (e.y = t.pageY - n);
+        });
+        TweenLite.ticker.addEventListener("tick", function () {
+            o || ((t.x += (e.x - t.x) * n), (t.y += (e.y - t.y) * n), TweenLite.set(a, { x: t.x, y: t.y }));
+        });
 	})
 
 /*--------------------------------------------------
@@ -650,6 +663,7 @@ Function First Load
 		})
 		
 		
+		
 	}// End First Load
 	
 	
@@ -968,7 +982,8 @@ Function Portfolio
 			FitThumbScreen();
 			
 		}	
-	
+
+		
 	}//End Portfolio
 
 
@@ -2317,7 +2332,7 @@ Function Load Via Ajax
 		ShowcaseCarousel();
 		LargeShowcaseCarousel();
 		Sliders();
-			
+		AjaxLoad();	
 		BackToTop();
 		JustifiedGrid();
 		Lightbox();

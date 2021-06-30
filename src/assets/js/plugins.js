@@ -9710,14 +9710,7 @@ function AjaxLoad() {
         o = !1,
         a = document.getElementById("ball"),
         i = document.getElementById("ball-loader");
-    TweenLite.set(a, { xPercent: -50, yPercent: -50 }),
-        document.addEventListener("mousemove", function (t) {
-            var n = window.pageYOffset || document.documentElement.scrollTop;
-            (e.x = t.pageX), (e.y = t.pageY - n);
-        }),
-        TweenLite.ticker.addEventListener("tick", function () {
-            o || ((t.x += (e.x - t.x) * n), (t.y += (e.y - t.y) * n), TweenLite.set(a, { x: t.x, y: t.y }));
-        }),
+   
         $(".parallax-wrap").mouseenter(function (e) {
             TweenMax.to(this, 0.3, { scale: 2 }),
                 TweenMax.to(a, 0.3, { scale: 2, borderWidth: "1px", opacity: 0.2 }),
