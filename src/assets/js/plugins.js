@@ -9771,7 +9771,6 @@ function FitThumbScreen() {
     for (var l = document.documentElement, c = document.body, e = document.querySelectorAll(".thumb-page"), t = document.querySelectorAll(".item-image"), o = 0; o < t.length; o++) i(t[o], e[o]);
     function i(e, t) {
         e.addEventListener("click", function () {
-            console.log("me fk off")
             TweenMax.to("#ball", 0.2, { borderWidth: "2px", scale: 1, x: -15, y: -15 }),
                 TweenMax.to("#ball-loader", 0.2, { borderWidth: "2px", top: 0, left: 0 }),
                 $("#ball").removeClass("with-icon").removeClass("hold"),

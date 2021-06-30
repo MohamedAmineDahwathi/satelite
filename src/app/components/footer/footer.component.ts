@@ -20,7 +20,6 @@ export class FooterComponent implements OnInit {
      
     $('.footer-button').on('mousedown touchstart', function(event) {
       that.timeoutId=setTimeout(function(){
-      console.log($('.swiper-slide-active').find('a').attr('href'))
       that.router.navigateByUrl($('.swiper-slide-active').find('a').attr('href'))
       $("body").addClass("show-loader");	
      
@@ -29,7 +28,6 @@ export class FooterComponent implements OnInit {
     clearTimeout(that.timeoutId);
 });;
     $(".button-wrap.left").on('click', function() {
-			console.log("sound clicked")
 			this.audio = document.getElementById("audio");
 			$('body').toggleClass("mute");
 			$(this).toggleClass("disabled");			   

@@ -12,7 +12,6 @@ export class FooterCarouselComponent implements OnInit {
 
   ngOnInit(): void {
     $(".button-wrap.left").on('click', function() {
-			console.log("sound clicked")
 			this.audio = document.getElementById("audio");
 			$('body').toggleClass("mute");
 			$(this).toggleClass("disabled");			   

@@ -10,9 +10,7 @@ export class FooterHiddenComponent implements OnInit {
   constructor() { }
   audio:any;
   ngOnInit(): void {
-	console.log("me here !!") 
     $(".button-wrap.left").on('click', function() {
-			console.log("sound clicked")
 			this.audio = document.getElementById("audio");
 			$('body').toggleClass("mute");
 			$(this).toggleClass("disabled");			   

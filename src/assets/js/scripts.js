@@ -23,9 +23,6 @@ Function Page Load
 ---------------------------------------------------*/
 
 	function PageLoad() {
-		console.log(window.location.pathname)	
-		
-		console.log("PageLoad")
 		if ($('#page-content').hasClass("light-content")) {
 			$('.preloader-wrap').addClass('light-content');			
 		}
@@ -192,7 +189,6 @@ Function First Load
 	function FirstLoad() {	
 		
 		
-		console.log("FirstLoad")
 		if ($("body").hasClass("smooth-scroll")) {
 			var elem = document.querySelector("#content-scroll");
 			if(elem)
@@ -265,12 +261,9 @@ Function First Load
 		});
 		
 		$('#burger-wrapper').on('click', function() {
-			console.log("clickedd ")
 			$('#menu-burger, nav').toggleClass('open');			
-			setTimeout( function(){
-			  console.log("dfds",$('#menu-burger').hasClass("open"))			
+			setTimeout( function(){		
 			  if ($('#menu-burger').hasClass("open")) {
-				console.log("me jere")
 				$('header').addClass('over-sidebar');
 				if (!$('#page-content').hasClass("light-content")) {	
 				  $('#magic-cursor').addClass('light-content');
@@ -284,7 +277,6 @@ Function First Load
 				});
 				  
 			  } else {	
-				console.log("me here")
 				//Fade Out Navigation Lists					
 				var tlMenu = new TimelineLite();
 				$(".menu-timeline").each(function(index, element) {
@@ -399,7 +391,6 @@ Function First Load
 			
 		// Slider Center on click
 		$('.slider').on('click', function() {
-			console.log("clickdsfsdf***************")
 			var $window = $(window),
 				$element = $(this),
 				elementTop = $element.offset().top,
@@ -492,12 +483,15 @@ Function First Load
 			}				
 			function parallaxItHero(e, target, movement){
 				var $this = $('#hero-bg-wrapper');
-				var relX = e.pageX - $this.offset().left;
-				var relY = e.pageY - $this.offset().top;					
-				TweenMax.to(target, 1, {
-					rotationY: (relX - $this.width()/1.5) / $this.width() * movement,
-					rotationX: (relY - $this.height()/2) / $this.height() * movement,
-				})
+				if($this.offset()){
+					var relX = e.pageX - $this.offset().left;
+					var relY = e.pageY - $this.offset().top;					
+					TweenMax.to(target, 1, {
+						rotationY: (relX - $this.width()/1.5) / $this.width() * movement,
+						rotationX: (relY - $this.height()/2) / $this.height() * movement,
+					})
+				}
+				
 			}				
 			function moveItHero(e, target, movement){
 				var $this = $('#hero-bg-wrapper');
@@ -642,7 +636,6 @@ Function First Load
 		})*/
 		
 		$('.item-appear').each(function(){
-			console.log("i am here")
 			var $this = $(this);
 			var $thisHeight = $(this).height();
 			
@@ -804,7 +797,6 @@ Function Portfolio
 		
 	function Portfolio() {	
 			
-		console.log("Portfolio")
 		if( $('#portfolio-wrap').length > 0 ){			
 			
 			if ($("body").hasClass("smooth-scroll")) {
@@ -992,7 +984,6 @@ Function Showcase
 ---------------------------------------------------*/
 	
 	function LargeShowcaseCarousel() {
-		console.log("LargeShowcaseCarousel")
 	
 		if( $('#large-showcase-carousel').length > 0 ){	
 		
@@ -1176,7 +1167,6 @@ Function Showcase
 	
 	function ShowcaseCarousel() {
 		
-		console.log("ShowcaseCarousel")
 	
 		if( $('#showcase-carousel').length > 0 ){	
 		
@@ -1300,7 +1290,6 @@ Function Showcase
 	
 	function Showcase() {
 		
-		console.log("Showcase")
 	
 		if( $('#showcase-slider').length > 0 ){	
 			
@@ -1613,7 +1602,6 @@ Function Back To Top
 ---------------------------------------------------*/
 	
 	function BackToTop() {
-		console.log("BackToTop")
 		$('.scroll-down-wrap').on('click', function() {
 			$('html, body').animate({ scrollTop: $('#main-content').offset().top +1 },700);
 			return false;
@@ -1631,7 +1619,6 @@ Function Sliders
 ---------------------------------------------------*/
 	
 	function Sliders() {
-		console.log("Sliders",$('.text-carousel').length, $('.carousel').length)
 		$('.slider').owlCarousel({
 			loop:true,
 			margin:500,
@@ -1646,7 +1633,6 @@ Function Sliders
 		$( ".slider .owl-next" ).removeClass( "parallax-wrap" );
 		
 		if( $('.carousel').length > 0 ){
-			console.log("wiooooooo")
 			$('.carousel').owlCarousel({
 				loop:true,
 				margin:20,
@@ -1726,7 +1712,6 @@ Function Justified Grid
 	
 	function JustifiedGrid() {
 		
-		console.log("JustifiedGrid")
 		if( $('#justified-grid').length > 0 ){
 		
 			$('#justified-grid').justifiedGallery({
@@ -1745,7 +1730,6 @@ Function Lightbox
 ---------------------------------------------------*/
 	
 	function Lightbox() {
-		console.log("Lightbox")
 		$('.image-link').magnificPopup({
 		  	type: 'image',
 			mainClass: 'mfp-with-zoom',	
@@ -1784,7 +1768,6 @@ Function Contact Formular
 ---------------------------------------------------*/	
 		
 	function ContactForm() {	
-		console.log("ContactForm")
 		if( jQuery('#contact-formular').length > 0 ){
 			
 			$('#contactform').submit(function(){
@@ -1820,7 +1803,6 @@ Function Page PlayVideo
 
 
 	function PlayVideo() {
-		console.log("PlayVideo")
 		if( $('.video-wrapper').length > 0 ){	
 			
 			
@@ -2088,7 +2070,6 @@ Function Contact Map
 ---------------------------------------------------*/	
 		
 	function ContactMap() {	
-		console.log("ContactMap")
 		if( jQuery('#map_canvas').length > 0 ){					
 			var latlng = new google.maps.LatLng(43.270441,6.640888);
 			var settings = {
@@ -2324,7 +2305,6 @@ Function Load Via Ajax
 ---------------------------------------------------*/	
 	
 	function LoadViaAjax() {		
-		console.log("LoadViaAjax")
 		FirstLoad();		
 		LazyLoad();		
 		Portfolio();
