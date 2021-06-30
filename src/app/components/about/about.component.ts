@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { JqueryExService } from 'src/app/helpers/jquery-ex.service';
 declare const $:any;
 
-declare const TweenLite:any;
+declare const LoadViaAjax:any;
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
@@ -15,7 +15,10 @@ export class AboutComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-      this.jq.exJs()
+    setTimeout(function(){
+      LoadViaAjax();			
+
+    },800);
 
   }
   goAfter(ff){

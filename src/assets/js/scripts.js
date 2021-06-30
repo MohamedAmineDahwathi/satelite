@@ -291,7 +291,56 @@ Function First Load
 			} , 20 );
 		  });
 		
-		
+		// Page  Navigation Events
+		$('.next-ajax-link-page').on('click', function() {					
+			$("body").addClass("load-next-page");
+			$("body").addClass("show-loader");
+			var pageheight = $(".scroll-content").height()
+			if ($("body").hasClass("smooth-scroll")) {
+				TweenMax.to(scrollbar, 0.5, {scrollTop :pageheight, ease:Power4.easeIn});
+			} else {                    
+                TweenMax.to(window, 0.5, {scrollTo :$("footer").offset().top, ease:Power4.easeIn});               
+            }	
+			TweenMax.to('#ball', 0.3,{borderWidth:"2px",scale:1,backgroundColor:"rgba(0, 0, 0, 0)",opacity:1});
+			if ($('#project-nav').hasClass("light-content")) {				
+				setTimeout(function(){
+					$('body').addClass('light-content');								
+				} , 300 );
+			}
+			if ($("body").hasClass("smooth-scroll")) {
+				if ($(window).width() >= 1466) {
+				   var navmove = $("#content-scroll").height() - $("#hero").height() - 92 - $("footer").height()
+				}
+				else {
+				   var navmove = $("#content-scroll").height() - $("#hero").height() - 72 - $("footer").height()
+				}				
+			} else {
+				if ($(window).width() >= 1466) {
+				   var navmove = window.innerHeight - $("#hero").height() - 92 - $("footer").height()
+				}
+				else {
+				   var navmove = window.innerHeight - $("#hero").height() - 72 - $("footer").height()
+				}				   
+			}
+			var navtitleheight = $(".page-title").height()
+			var navsubtitlemove = $(".page-subtitle").height() + navtitleheight
+			var navsubtitleheight = $(".page-subtitle").height()
+				
+			TweenMax.to($(".next-page-title"), 0.6, {force3D:true, yPercent:-10,delay:0, ease:Power2.easeInOut});
+			if ($('.next-page-title .inner').hasClass("text-align-center")) {
+				TweenMax.to($(".page-subtitle"), 0.3, {force3D:true, opacity:0, scale:0.5, delay:0, ease:Power2.easeOut});
+			} else {
+				TweenMax.to($(".page-subtitle"), 0.3, {force3D:true, opacity:0, scale:1, delay:0, ease:Power2.easeOut});
+			}
+			TweenMax.to($(".page-title"), 0.6, {force3D:true, y: -navtitleheight, delay:0.1, ease:Power2.easeInOut});
+			TweenMax.set($(".page-subtitle"), {opacity:0, scale:1, y: navsubtitlemove, delay:0.4});
+			TweenMax.set($(".subtitle-info"), {opacity:0, delay:0.4});
+			TweenMax.set($(".subtitle-name"), {opacity:1, delay:0.4});
+			TweenMax.to($(".page-subtitle"), 0.3, {force3D:true, opacity:1, scale:1, y:navsubtitleheight, delay:0.4, ease:Power2.easeOut});
+			TweenMax.to($("#main-page-content, #hero"), 0.3, {opacity:0});		
+			TweenMax.to($("#page-nav"), 0.6, {y: - navmove, ease:Power2.easeInOut});
+			TweenMax.to($("footer"), 0.3, {opacity:0, delay:0.2, ease:Power2.easeInOut});
+		});
 		
 		// Project Navigation Events
 		$('.next-ajax-link-project').on('click', function() {	

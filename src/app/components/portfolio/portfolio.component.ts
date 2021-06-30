@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { JqueryExService } from 'src/app/helpers/jquery-ex.service';
 declare const $:any;
+declare const LoadViaAjax:any;
 @Component({
   selector: 'app-portfolio',
   templateUrl: './portfolio.component.html',
@@ -15,7 +16,10 @@ export class PortfolioComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.jq.exJs()
+    setTimeout(function(){
+      LoadViaAjax();			
+
+    },800);
   }
 
   goAfter(ff=null){
