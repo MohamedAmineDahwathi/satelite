@@ -2,7 +2,7 @@
     $(document).ready(function() {
 		"use strict";
 		PageLoad();
-	
+		AjaxLoad();
 	})
 
 /*--------------------------------------------------
@@ -2317,7 +2317,7 @@ Function Load Via Ajax
 		ShowcaseCarousel();
 		LargeShowcaseCarousel();
 		Sliders();
-		AjaxLoad();	
+			
 		BackToTop();
 		JustifiedGrid();
 		Lightbox();
