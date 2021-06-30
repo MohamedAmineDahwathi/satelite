@@ -3095,3 +3095,7 @@ Primary use:	Showcase Portfolio
 		display:block;
 	}
 }
+
+a{
+	cursor: pointer;
+}
