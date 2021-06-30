@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { JqueryExService } from 'src/app/helpers/jquery-ex.service';
 
-declare const LoadViaAjax:any;
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -15,10 +14,7 @@ export class ContactComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    setTimeout(function(){
-      LoadViaAjax();			
-
-    },800);
+    this.jq.exJs()
   }
   
   goAfter(ff){

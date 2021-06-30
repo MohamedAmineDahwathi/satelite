@@ -50,9 +50,9 @@ export class JqueryExService {
 				TweenMax.to($(".swiper-pagination-bullet-active .title"), 0.4, {force3D:true, opacity:0, delay:0.1, ease:Power2.easeOut});
 				TweenMax.to($(".footer-button-wrap"), 0.4, {force3D:true, opacity:0, delay:0.1, ease:Power2.easeOut});
 				TweenMax.to($(".showcase-counter, .swiper-pagination-bullet-active .counter, .arrows-wrap"), 0.3, {force3D:true, opacity:0, delay:0.1, ease:Power2.easeOut});
-				TweenMax.to($("#main"), 0.3, {opacity:0, delay:0.4, ease:Power0.ease});
+				//TweenMax.to($("#main"), 0.3, {opacity:0, delay:0.4, ease:Power0.ease});
 			} else {
-				TweenMax.to($("#main"), 0.3, {opacity:0, delay:0.1, ease:Power0.ease});
+				//TweenMax.to($("#main"), 0.3, {opacity:0, delay:0.1, ease:Power0.ease});
 			}
       setTimeout(function(){
 				LoadViaAjax();			
